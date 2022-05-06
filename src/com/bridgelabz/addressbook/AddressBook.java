@@ -9,7 +9,7 @@ import java.util.Scanner;
 
         public void setUpInfo() {
             Scanner in = new Scanner(System.in);
-            System.out.println("How many contacts you want to create");
+            System.out.println("Num of contacts you want to create");
             int count = in.nextInt();
             for (int i = 1; i <= count; i++) {
                 System.out.println("Enter the First Name:");
@@ -72,6 +72,12 @@ import java.util.Scanner;
                     displayListItems();
                 }
             }
+        }
+        public void deleteContact() {
+            System.out.println("Enter the first name of the contact to be deleted");
+            String Name = in.next();
+            list.removeIf(info -> info.getFirstName().contains(Name));
+            displayListItems();
         }
     }
 
